@@ -5,32 +5,16 @@
 	local Lobby = Window:NewTab("Game")
 	local AutoChain = Lobby:NewSection("AutoChain")
 	local turn = false
+local lolc = 0
 	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
 		if state then
 			turn = true
 			print("lolok")
-			while state do
-				for index,value in pairs(game.Workspace.Towers:GetChildren()) do
-					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
-						local args = {
-							[1] = "Troops",
-							[2] = "Abilities",
-							[3] = "Activate",
-							[4] = {
-								["Name"] = "Call Of Arms",
-								["Troop"] = value
-							}
-						}
-
-						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-						wait(10.1)
-					end
-				end
-				wait()
-			end 
+			lolc = lolc + 15
 		else
 			turn = false
 			print("ok")
+lolc = lolc - 15
 		end
 	end)
 
@@ -160,6 +144,54 @@ Stack:NewDropdown("StackTower", "Alt of stack tower name", {"Scout", "Sniper", "
 		local Event = game:GetService("ReplicatedStorage").RemoteFunction
 		Event:InvokeServer(A_1, A_2, A_3, A_4)
 end)
+local Check = 0
+while true do
+if Check > 12 then
+	local args = {
+    [1] = "Waves",
+    [2] = "Skip"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+wait(0.1)
+end
+end
+local Skipping = Lobby:NewSection("Skipping")
+Skipping:NewToggle("Spam skip", "Breh", function(state)
+    if state then
+       Check = Check + 15
+    else
+       Check = Check - 15
+    end
+end)
+Skipping:NewKeybind("Skip with keybind", "KeybindInfo", Enum.KeyCode.P, function()
+	local args = {
+    [1] = "Waves",
+    [2] = "Skip"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end)
 
 
+while true do
+if lolc >= 12 then
+				for index,value in pairs(game.Workspace.Towers:GetChildren()) do
+					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
+						local args = {
+							[1] = "Troops",
+							[2] = "Abilities",
+							[3] = "Activate",
+							[4] = {
+								["Name"] = "Call Of Arms",
+								["Troop"] = value
+							}
+						}
 
+						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+						wait(10.1)
+					end
+				end
+				end
+wait()
+			end 
