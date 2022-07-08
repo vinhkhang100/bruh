@@ -135,8 +135,8 @@ local CheckEd = false
 local lolc = false
 
 
-end
-				end
+
+			
 
 
 	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
