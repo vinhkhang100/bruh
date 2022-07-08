@@ -153,5 +153,19 @@ Skipping:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 end)
 
+Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+    while true do
+    if state then
+    		local args = {
+    [1] = "Waves",
+    [2] = "Skip"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+
+    end
+    wait()
+    end
+end)
 
 
