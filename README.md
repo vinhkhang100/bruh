@@ -142,7 +142,7 @@ end
 		local Event = game:GetService("ReplicatedStorage").RemoteFunction
 		Event:InvokeServer(A_1, A_2, A_3, A_4)
 	end)
-
+local Check = 0
 
 local Skipping = Lobby:NewSection("Skipping")
 Skipping:NewToggle("Spam skip", "Breh", function(state)
@@ -154,7 +154,7 @@ Skipping:NewToggle("Spam skip", "Breh", function(state)
 end)
 
 
-local Check = 0
+
 while true do
 if Check > 12 then
 	local args = {
