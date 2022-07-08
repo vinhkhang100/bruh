@@ -5,10 +5,9 @@
 	local Lobby = Window:NewTab("Game")
 	local AutoChain = Lobby:NewSection("AutoChain")
 	local turn = false
-local lolc = 0
-	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
-
-if state then
+local lolc = false
+while true do
+if lolc == true then
 for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
 						local args = {
@@ -26,6 +25,14 @@ for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 					end
 				end
 
+end
+end
+	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
+
+if state then
+lolc = true
+else
+lolc = false
 end
 
        end)
@@ -145,7 +152,7 @@ end
 	end)
 local Check = 0
 local Skipping = Lobby:NewSection("Skipping")
-Skipping:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+Skipping:NewKeybind("SkipKey", "Breh", Enum.KeyCode.F, function()
 		local args = {
     [1] = "Waves",
     [2] = "Skip"
@@ -154,25 +161,4 @@ Skipping:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 end)
 local CheckEd = false
-
-Skipping:NewToggle("ToggleText", "ToggleInfo", function(state)
-  
-    if state then
-CheckEd = true
-else
-CheckEd = false
-    end
-end)
-while true do
-if CheckEd == true then
-    		local args = {
-    [1] = "Waves",
-    [2] = "Skip"
-}
-
-game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-wait()
-end
-end
-
 
