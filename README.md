@@ -139,7 +139,7 @@ end
 				end
 
 
-	AutoChain:NewButton("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
+	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
 
 if state then
 while true do
