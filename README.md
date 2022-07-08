@@ -143,28 +143,15 @@ end
 		Event:InvokeServer(A_1, A_2, A_3, A_4)
 	end)
 local Check = 0
-
 local Skipping = Lobby:NewSection("Skipping")
-Skipping:NewToggle("Spam skip", "Breh", function(state)
-    if state then
-       Check = Check + 15
-    else
-       Check = Check - 15
-    end
-end)
-
-
-
-while true do
-if Check > 12 then
-	local args = {
+Skipping:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+		local args = {
     [1] = "Waves",
     [2] = "Skip"
 }
 
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-wait(0.1)
-end
-end
+end)
+
 
 
