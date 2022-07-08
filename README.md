@@ -158,6 +158,8 @@ for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 						wait(10.1)
 				 end
+				 end
+				 end
 else
 end
 
