@@ -7,16 +7,26 @@
 	local turn = false
 local lolc = 0
 	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
-		if state then
-			turn = true
-			print("lolok")
-			lolc = lolc + 15
-		else
-			turn = false
-			print("ok")
-lolc = lolc - 15
-		end
-	end)
+while true do
+if state then
+for index,value in pairs(game.Workspace.Towers:GetChildren()) do
+					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
+						local args = {
+							[1] = "Troops",
+							[2] = "Abilities",
+							[3] = "Activate",
+							[4] = {
+								["Name"] = "Call Of Arms",
+								["Troop"] = value
+							}
+						}
+
+						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+						wait(10.1)
+					end
+				end
+end
+end
 
 
 	local Stack = Lobby:NewSection("Stack")
@@ -174,24 +184,3 @@ game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 end)
 
 
-while true do
-if lolc >= 12 then
-				for index,value in pairs(game.Workspace.Towers:GetChildren()) do
-					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
-						local args = {
-							[1] = "Troops",
-							[2] = "Abilities",
-							[3] = "Activate",
-							[4] = {
-								["Name"] = "Call Of Arms",
-								["Troop"] = value
-							}
-						}
-
-						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-						wait(10.1)
-					end
-				end
-				end
-wait()
-			end 
