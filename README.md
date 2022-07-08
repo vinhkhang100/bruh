@@ -144,18 +144,6 @@ end
 	end)
 
 
-local Check = 0
-while true do
-if Check > 12 then
-	local args = {
-    [1] = "Waves",
-    [2] = "Skip"
-}
-
-game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-wait(0.1)
-end
-end
 local Skipping = Lobby:NewSection("Skipping")
 Skipping:NewToggle("Spam skip", "Breh", function(state)
     if state then
@@ -172,5 +160,18 @@ Skipping:NewKeybind("Skip with keybind", "KeybindInfo", Enum.KeyCode.P, function
 
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 end)
+
+local Check = 0
+while true do
+if Check > 12 then
+	local args = {
+    [1] = "Waves",
+    [2] = "Skip"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+wait(0.1)
+end
+end
 
 
