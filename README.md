@@ -143,18 +143,7 @@ end
 		Event:InvokeServer(A_1, A_2, A_3, A_4)
 	end)
 
-Stack:NewDropdown("StackTower", "Alt of stack tower name", {"Scout", "Sniper", "Demoman","Freezer","Hunter","Ace Pilot","Medic", "Farm", "Militant","Shotgunner","Military Base","Electroshocker", "Commander","DJ Booth", "Soldier","Pyromancer","Rocketeer","Minigunner","Ranger","Accelerator","Engineer","Crook Boss","Turret","Mortar","Pursuit","Cowboy","Gladiator","Commando","Slasher","Frost Blaster","Swarmer","Toxic Gunner", "Sledger" , "Executioner","Archer","Mecha Base"}, function(currentOption)
-    local A_1 = "Troops"
-		local A_2 = "Place"
-		local A_3 = currentOption
-		local A_4 = 
-			{
-				["Rotation"] = CFrame.new(0,5,0), 
-				["Position"] = game.Players.LocalPlayer.character.HumanoidRootPart.Position - Vector3.new(0,5,0)
-			}
-		local Event = game:GetService("ReplicatedStorage").RemoteFunction
-		Event:InvokeServer(A_1, A_2, A_3, A_4)
-end)
+
 local Check = 0
 while true do
 if Check > 12 then
