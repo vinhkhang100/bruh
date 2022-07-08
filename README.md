@@ -27,7 +27,7 @@ for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 				end
 end
 end
-end)
+ end)
 
 
 	local Stack = Lobby:NewSection("Stack")
