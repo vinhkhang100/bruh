@@ -7,7 +7,7 @@
 	local turn = false
 local lolc = 0
 	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
-
+while true do
 if state then
 for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
@@ -26,6 +26,7 @@ for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 					end
 				end
 
+end
 end
        end)
 
@@ -153,7 +154,7 @@ Skipping:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
 game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 end)
 
-Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+Skipping:NewToggle("ToggleText", "ToggleInfo", function(state)
     while true do
     if state then
     		local args = {
