@@ -133,8 +133,16 @@ end)
 local CheckEd = false
 
 local lolc = false
+
+
+end
+				end
+
+
+	AutoChain:NewButton("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
+
+if state then
 while true do
-if lolc == true then
 for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 					if value.Owner.Value == game.Players.LocalPlayer and value.Replicator:GetAttribute("Type") == "Commander" then
 						local args = {
@@ -149,17 +157,8 @@ for index,value in pairs(game.Workspace.Towers:GetChildren()) do
 
 						game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
 						wait(10.1)
-					end
-				end
-
-end
-end
-	AutoChain:NewToggle("AutoChain", "Make sure u have at least 3 lv 2 plus commanders", function(state)
-
-if state then
-lolc = true
+				 end
 else
-lolc = false
 end
 
        end)
