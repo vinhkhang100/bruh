@@ -152,14 +152,7 @@ Skipping:NewToggle("Spam skip", "Breh", function(state)
        Check = Check - 15
     end
 end)
-Skipping:NewKeybind("Skip with keybind", "KeybindInfo", Enum.KeyCode.P, function()
-	local args = {
-    [1] = "Waves",
-    [2] = "Skip"
-}
 
-game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-end)
 
 local Check = 0
 while true do
