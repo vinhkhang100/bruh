@@ -99,7 +99,9 @@ end)
 game.Workspace.Time.Changed:Connect(function ()
 	if game.Workspace.Time.Value == 119 then
 		if ExpFarm == true then
-			game.Players.LocalPlayer.character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["0"])
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			game.Players.LocalPlayer.character.Humanoid:EquipTool(v)
+			end
 
 		end
 	end
