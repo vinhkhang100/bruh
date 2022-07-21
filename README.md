@@ -96,8 +96,8 @@ MurderP:NewToggle("Xp Farm(team chaos only)","the exp farm is still beta", funct
 		ExpFarm = false
 	end
 end)
-game.Players.LocalPlayer.MatchCurrency.Changed:Connect(function ()
-	if game.Players.LocalPlayer.MatchCurrency.Value == 15 then
+game.Workspace.Time.Changed:Connect(function ()
+	if game.Workspace.Time.Value == 119 then
 		if ExpFarm == true then
 			game.Players.LocalPlayer.character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["0"])
 
